@@ -53,3 +53,29 @@ void f_pint(stack_t **header, unsigned int line_number)
 		exit_error_function("can't pint, stack empty", line_number);
 	printf("%d\n", (*header)->n);
 }
+/**
+ * f_pop -removes the top element of the stack.
+ * @header: pointer to stack.
+ * @line_number: current line
+ * Return: Nothing.
+ */
+void f_pop(stack_t **header, unsigned int line_number)
+{
+	stack_t *to_pop = NULL;
+
+	if (!*header || !header)
+		exit_error_function("can't pop an empty stack", line_number);
+
+	if ((*header)->next)
+	{
+		*header = (*header)->next;
+		to_pop = (*header)->prev;
+		free(to_pop);
+		(*header)->prev = NULL;
+	}
+	else
+	{
+		free((*header));
+		*header = NULL;
+	}
+}
