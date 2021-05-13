@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		{
 			token = strtok(global.line, " \t\n");
 			funcion = serch_opcode(token, line_number);
-		if (funcion == f_pall)
+		if (funcion == f_pall || funcion == f_pint)
 			funcion(&global.head, line_number);
 		else if (funcion != NULL)
 		{

@@ -10,7 +10,7 @@ op_function serch_opcode(char *token, unsigned int line_number)
 	int i;
 
 	instruction_t list_intructions[] = {
-		{"push", f_push}, {"pall", f_pall},
+		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{NULL, NULL}};
 	if (token == NULL || *token == '#')
 		return (NULL);
