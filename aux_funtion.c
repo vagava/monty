@@ -1,12 +1,10 @@
 #include "monty.h"
-
 /**
  * serch_opcode - search opcode function sored in the token
  * @token: opcode instruction to search
  * @line_number: current line
  * Return: Nothing.
  */
-
 op_function serch_opcode(char *token, unsigned int line_number)
 {
 	int i;
@@ -23,22 +21,19 @@ op_function serch_opcode(char *token, unsigned int line_number)
 	free_and_close();
 	exit(EXIT_FAILURE);
 }
-
 /**
  * converter_to_number - converter a str in integer
  * @token: opcode instruction to search
  * @line_number: current line
  * Return: Nothing.
  */
-
 int converter_to_number(char *token, unsigned int line_number)
 {
 	int n = 0;
 
-	if (token == NULL)
-		exit_error_function("usage: push integer", line_number);
-	if (*token == '-' || *token < '0' || *token > '9') /*if not int or negative*/
-	{	if (*token == '-')/*if negative*/
+	if (token == NULL || *token == '-' || *token < '0' || *token > '9')
+	{	/*if not int or negative*/
+		if (*token == '-')/*if negative*/
 		{
 			token++;
 			if (*token < '0' || *token > '9')
@@ -49,7 +44,6 @@ int converter_to_number(char *token, unsigned int line_number)
 		else /*if is a leter*/
 			exit_error_function("usage: push integer", line_number);
 	}
-
 	n = atoi(token);
 	return (n);
 }

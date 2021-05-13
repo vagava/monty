@@ -11,10 +11,6 @@ global_t global = {NULL, NULL, NULL, 0};  /*file,head,linea,n_struc*/
 
 int main(int argc, char *argv[])
 {
-	/*FILE *file = NULL;*/
-	/*char *line = NULL;*/
-	/*stack_t **header = NULL;*/
-	/*int n;*/
 	char *token = NULL;
 	size_t size = 0;
 	unsigned int line_number = 1;
