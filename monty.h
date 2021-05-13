@@ -58,5 +58,6 @@ void free_and_close(void);
 void f_push(stack_t **header, unsigned int line_number);/*opfunctions*/
 void f_pall(stack_t **header, unsigned int line_number);
 void f_pint(stack_t **header, unsigned int line_number);
+void f_pop(stack_t **header, unsigned int line_number);
 
 #endif /* MONTY_H */

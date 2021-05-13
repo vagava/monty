@@ -49,7 +49,7 @@ void f_pall(stack_t **header, unsigned int line_number __attribute__((unused)))
  */
 void f_pint(stack_t **header, unsigned int line_number)
 {
-	stack_t *start_stack = NULL;
+	/*stack_t *start_stack = NULL;*/
 
 	if (!*header)
 		exit_error_function("can't pint, stack empty", line_number);
