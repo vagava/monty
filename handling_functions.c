@@ -42,7 +42,7 @@ void f_pall(stack_t **header, unsigned int line_number __attribute__((unused)))
 	}
 }
 /**
- * f_pint -prints the value at the top of the stack, followed by a new line.
+ * f_pint - only print the top
  * @header: pointer to stack.
  * @line_number: current line
  * Return: Nothing.
@@ -53,12 +53,13 @@ void f_pint(stack_t **header, unsigned int line_number)
 
 	if (!*header)
 		exit_error_function("can't pint, stack empty", line_number);
-	start_stack = *header;
-	while (start_stack->next) /*search the first node*/
+	printf("%d\n", (*header)->n);
+
+	/*while (start_stack->next) search the first node
 		start_stack = start_stack->next;
-	while (start_stack)/*print from first to the top*/
+	while (start_stack)print from first to the top
 	{
 		printf("%d\n", start_stack->n);
 		start_stack = start_stack->prev;
-	}
+	}*/
 }
