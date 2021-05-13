@@ -24,8 +24,10 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 		exit_error_function("USAGE: monty file", 0);
 	if (access(argv[1], R_OK) == -1)
+	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-
+		exit(EXIT_FAILURE);
+	}
 	global.file = fopen(argv[1], "r"); /*open file*/
 	if (global.file == NULL)
 		exit_error_function("Error: malloc failed", 0);
@@ -47,8 +49,7 @@ int main(int argc, char *argv[])
 		}
 		line_number++;
 	}
-	free(global.line);/*fee line*/
-	fclose(global.file);/*close file*/
+	free_and_close();
 	return (0);
 }
 
