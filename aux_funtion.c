@@ -20,6 +20,7 @@ op_function serch_opcode(char *token, unsigned int line_number)
 		if (strcmp(token, list_intructions[i].opcode) == 0)
 			return (list_intructions[i].f);
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
+	free_and_close();
 	exit(EXIT_FAILURE);
 }
 
