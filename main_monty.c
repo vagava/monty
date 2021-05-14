@@ -34,8 +34,6 @@ int main(int argc, char *argv[])
 		{
 			token = strtok(global.line, " \t\n");
 			funcion = serch_opcode(token, line_number);
-			/*if (funcion != f_push)
-				funcion(&global.head, line_number);*/
 			if (funcion != NULL)
 			{
 				token = strtok(NULL, " \t\n");

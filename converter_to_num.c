@@ -3,13 +3,16 @@
  * converter_to_number - converter a str in integer
  * @token: opcode instruction to search
  * @line_number: current line
+ * @function: function to compare
  * Return: Nothing.
  */
-int converter_to_number(char *token, unsigned int line_number, op_function function)
+int converter_to_number(char *token, unsigned int line_number,
+			op_function function)
 {
 	int n = 0;
+
 	if (function != f_push) /*a function whit out arguments*/
-		return line_number;
+		return (line_number);
 	if (token == NULL)
 	{
 		exit_error_function("usage: push integer", line_number);
