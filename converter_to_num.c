@@ -19,7 +19,7 @@ int converter_to_number(char *token, unsigned int line_number,
 	if (token == NULL)
 		exit_error_function("usage: push integer", line_number);
 	search = token;
-	while(*token)
+	while (*token)
 	{
 		if (*token == '-')
 			token++;
@@ -30,7 +30,7 @@ int converter_to_number(char *token, unsigned int line_number,
 		}
 		token++;
 	}
-	if(is_num == false)
+	if (is_num == false)
 		exit_error_function("usage: push integer", line_number);
 
 	n = atoi(search);
