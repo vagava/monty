@@ -10,26 +10,28 @@ int converter_to_number(char *token, unsigned int line_number,
 			op_function function)
 {
 	int n = 0;
+	bool is_num = true;
 
 	if (function != f_push) /*a function whit out arguments*/
 		return (line_number);
+
 	if (token == NULL)
-	{
 		exit_error_function("usage: push integer", line_number);
-	}
-	if (*token == '-' || *token < '0' || *token > '9')/*if not int or negative*/
+
+	while(*token)
 	{
-		if (*token == '-')/*if negative*/
-		{
+		if (*token == '-')
 			token++;
-			if (*token < '0' || *token > '9')
-				exit_error_function("usage: push integer", line_number);
-			else
-				token--;
+		if (*token < '0' || *token > '9')
+		{
+			is_num = false;
+			break;
 		}
-		else /*if is a leter*/
-			exit_error_function("usage: push integer", line_number);
+		token++;
 	}
+	if(is_num == false)
+		exit_error_function("usage: push integer", line_number);
+
 	n = atoi(token);
 	return (n);
 }
