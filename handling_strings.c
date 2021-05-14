@@ -14,5 +14,5 @@ void pchar(stack_t **header, unsigned int line_number)
 	top = *header;
 	if (top->n < 00 || top->n > 255)
 		exit_error_function("can't pchar, value out of range", line_number);
-	printf("%c\n", itoa(top->n));
+	printf("%c\n", top->n);
 }
