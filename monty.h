@@ -60,10 +60,11 @@ void f_pall(stack_t **header, unsigned int line_number);
 void f_pint(stack_t **header, unsigned int line_number);
 void f_pop(stack_t **header, unsigned int line_number);
 void f_swap(stack_t **header, unsigned int line_number);
-void f_add(stack_t **header, unsigned int line_number);/*math functions*/
+void f_add(stack_t **header, unsigned int line_number); /*math functions*/
 void f_sub(stack_t **header, unsigned int line_number);
 void f_div(stack_t **header, unsigned int line_number);
 void f_mul(stack_t **header, unsigned int line_number);
 void f_mod(stack_t **header, unsigned int line_number);
+void pchar(stack_t **header, unsigned int line_number); /*str functions*/
 
 #endif /* MONTY_H */

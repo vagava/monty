@@ -13,7 +13,8 @@ op_function serch_opcode(char *token, unsigned int line_number)
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
 		{"sub", f_sub}, {"div", f_div}, {"nop", NULL},
-		{"mul", f_mul}, {"mod", f_mod}, {NULL, NULL}};
+		{"mul", f_mul}, {"mod", f_mod}, {"pchar", pchar},
+		{NULL, NULL}};
 	if (token == NULL || *token == '#')
 		return (NULL);
 	for (i = 0; list_intructions[i].opcode != NULL; i++)
