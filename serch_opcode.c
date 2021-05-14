@@ -11,7 +11,8 @@ op_function serch_opcode(char *token, unsigned int line_number)
 
 	instruction_t list_intructions[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-		{"pop", f_pop}, {"swap", f_swap}, {"nop", NULL},
+		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
+		{"nop", NULL},
 		{NULL, NULL}};
 	if (token == NULL || *token == '#')
 		return (NULL);
