@@ -88,8 +88,9 @@ void f_mul(stack_t **header, unsigned int line_number)
 	result->prev = NULL;
 }
 /**
- * f_mul - multiplies the second top element of the stack
- * with the top element of the stack.
+ * f_mod - computes the rest of the division
+ * of the second top element of the stack by
+ * the top element of the stack.
  *@header: pointer to stack
  *@line_number: current line
  * Return: Nothing.
@@ -100,8 +101,10 @@ void f_mod(stack_t **header, unsigned int line_number)
 	int new_n = 0;
 
 	if (!*header || !(*header)->next)
-		exit_error_function("can't mul, stack too short", line_number);
+		exit_error_function("can't mod, stack too short", line_number);
 	result = (*header)->next;
+	if (result->prev->n == 0)
+		exit_error_function("division by zero", line_number);
 	new_n = result->n % (*header)->n;
 	result->n = new_n;
 	*header = result;
