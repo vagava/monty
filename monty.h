@@ -53,7 +53,7 @@ typedef void (*op_function)(stack_t **, unsigned int line_number);
 
 void exit_error_function(char *msj_error, unsigned int line_error);/*aux_functions*/
 op_function serch_opcode(char* token, unsigned int line_number);
-int converter_to_number(char *token, unsigned int line_number);
+int converter_to_number(char *token, unsigned int line_number, op_function function);
 void free_and_close(void);
 void f_push(stack_t **header, unsigned int line_number);/*opfunctions*/
 void f_pall(stack_t **header, unsigned int line_number);

@@ -5,10 +5,11 @@
  * @line_number: current line
  * Return: Nothing.
  */
-int converter_to_number(char *token, unsigned int line_number)
+int converter_to_number(char *token, unsigned int line_number, op_function function)
 {
 	int n = 0;
-
+	if (function != f_push)
+		return line_number;
 	if (token == NULL)
 	{
 		exit_error_function("usage: push integer", line_number);
