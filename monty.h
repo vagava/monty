@@ -61,4 +61,5 @@ void f_pint(stack_t **header, unsigned int line_number);
 void f_pop(stack_t **header, unsigned int line_number);
 void f_swap(stack_t **header, unsigned int line_number);
 void f_add(stack_t **header, unsigned int line_number);
+void f_sub(stack_t **header, unsigned int line_number);
 #endif /* MONTY_H */
