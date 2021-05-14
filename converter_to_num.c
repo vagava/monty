@@ -9,6 +9,7 @@
 int converter_to_number(char *token, unsigned int line_number,
 			op_function function)
 {
+	char *search;
 	int n = 0;
 	bool is_num = true;
 
@@ -17,7 +18,7 @@ int converter_to_number(char *token, unsigned int line_number,
 
 	if (token == NULL)
 		exit_error_function("usage: push integer", line_number);
-
+	search = token;
 	while(*token)
 	{
 		if (*token == '-')
@@ -32,6 +33,6 @@ int converter_to_number(char *token, unsigned int line_number,
 	if(is_num == false)
 		exit_error_function("usage: push integer", line_number);
 
-	n = atoi(token);
+	n = atoi(search);
 	return (n);
 }
