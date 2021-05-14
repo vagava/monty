@@ -28,7 +28,7 @@ void f_swap(stack_t **header, unsigned int line_number)
 	*header = top;
 }
 /**
- * f_add - swaps the top two elements of the stack.
+ * f_add - adds the top two elements of the stack.
  *@header: pointer to stack
  *@line_number: current line
  * Return: Nothing.
@@ -50,7 +50,8 @@ void f_add(stack_t **header, unsigned int line_number)
 
 }
 /**
- * f_add - swaps the top two elements of the stack.
+ * f_sub - subtracts the top element of the stack from
+ * the second top element of the stack.
  *@header: pointer to stack
  *@line_number: current line
  * Return: Nothing.
@@ -69,5 +70,27 @@ void f_sub(stack_t **header, unsigned int line_number)
 	*header = result;
 	free(result->prev);
 	result->prev = NULL;
+}
+/**
+ * f_div -  divides the second top element
+ * of the stack by the top element of the stack.
+ *@header: pointer to stack
+ *@line_number: current line
+ * Return: Nothing.
+ */
+void f_div(stack_t **header, unsigned int line_number)
+{
+	stack_t *result = NULL;
+	int new_n = 0;
 
+	if (!*header || !(*header)->next)
+		exit_error_function("can't div, stack too short", line_number);
+	result = (*header)->next;
+	if (result->prev->n == 0)
+		exit_error_function("division by zero", line_number);
+	new_n = result->n / (*header)->n;
+	result->n = new_n;
+	*header = result;
+	free(result->prev);
+	result->prev = NULL;
 }
