@@ -14,6 +14,7 @@ op_function serch_opcode(char *token, unsigned int line_number)
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
 		{"sub", f_sub}, {"div", f_div}, {"nop", NULL},
 		{"mul", f_mul}, {"mod", f_mod}, {"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}};
 	if (token == NULL || *token == '#')
 		return (NULL);

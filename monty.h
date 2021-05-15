@@ -66,5 +66,6 @@ void f_div(stack_t **header, unsigned int line_number);
 void f_mul(stack_t **header, unsigned int line_number);
 void f_mod(stack_t **header, unsigned int line_number);
 void pchar(stack_t **header, unsigned int line_number); /*str functions*/
+void pstr(stack_t **header, unsigned int line_number);
 
 #endif /* MONTY_H */
