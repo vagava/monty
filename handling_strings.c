@@ -12,7 +12,7 @@ void pchar(stack_t **header, unsigned int line_number)
 	if (!*header)
 		exit_error_function("can't pchar, stack empty", line_number);
 	top = *header;
-	if (top->n < 00 || top->n > 255)
+	if (top->n <= 32 || top->n >= 126)
 		exit_error_function("can't pchar, value out of range", line_number);
 	printf("%c\n", top->n);
 }
